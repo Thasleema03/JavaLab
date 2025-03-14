@@ -11,44 +11,41 @@ public class Employee {
         System.out.println("2. Developer");
         System.out.println("3. Intern");
 
-        System.out.print("Choose your job role: ");
+        System.out.print("Choose your job role (1-3): ");
         int job = sc.nextInt();
 
-        int currentSalary = 0;
+        int currentSalary;
 
         // Assign salary based on job role selection
         switch (job) {
             case 1:
-                currentSalary = 60000; // Salary for Manager
+                currentSalary = 50000; // Salary for Manager
                 break;
             case 2:
-                currentSalary = 40000; // Salary for Developer
+                currentSalary = 30000; // Salary for Developer
                 break;
             case 3:
-                currentSalary = 25000; // Salary for Intern
+                currentSalary = 15000; // Salary for Intern
                 break;
             default:
                 System.out.println("Invalid selection");
                 return;
         }
 
-        int bonus = 0;
+        int bonus;
 
-        //Prompt the user to enter experience
+        // Prompt the user to enter experience
         System.out.print("Enter your experience (in years): ");
         int exp = sc.nextInt();
         System.out.println();
 
         // Determine bonus percentage based on experience
-        if (exp >= 0 && exp <= 2) {
-            bonus = 0; // No bonus for 0-2 years of experience
-        } else if (exp >= 3 && exp <= 5) {
-            bonus = 10; // 10% bonus for 3-5 years of experience
-        } else if (exp > 5) {
-            bonus = 20; // 20% bonus for more than 5 years of experience
+        if (exp < 3) {
+            bonus = 0;  // Less than 3 years -> No bonus
+        } else if (exp <= 5) {
+            bonus = 10; // 3 to 5 years -> 10% bonus
         } else {
-            System.out.println("Invalid experience"); // Handle negative experience input
-            return;
+            bonus = 20; // More than 5 years -> 20% bonus
         }
 
         // Calculate final salary after adding the bonus
