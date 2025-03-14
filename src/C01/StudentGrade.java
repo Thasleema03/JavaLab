@@ -1,17 +1,16 @@
 package C01;
 
-
 import java.util.Scanner; // Import Scanner class for user input
 
 public class StudentGrade {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in); // Create Scanner object for input
+        Scanner sc = new Scanner(System.in);
 
         // Prompt the user to enter their mark
         System.out.print("Enter your mark: ");
-        float mark = sc.nextFloat(); // Read the mark as a floating-point number
+        float mark = sc.nextFloat();
 
-        char grade; // Variable to store the grade
+        char grade;
 
         // Determine the grade based on the mark
         if (mark >= 90) {
@@ -23,7 +22,7 @@ public class StudentGrade {
         } else if (mark >= 60) {
             grade = 'D';
         } else {
-            grade = 'F'; // Assign 'F' for marks below 60
+            grade = 'F';
         }
 
         // Display the assigned grade
@@ -50,6 +49,6 @@ public class StudentGrade {
                 System.out.println("Invalid grade");
         }
 
-        sc.close(); // Close the Scanner
+        sc.close();
     }
 }

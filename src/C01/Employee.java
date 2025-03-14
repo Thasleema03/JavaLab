@@ -1,21 +1,20 @@
 package C01;
 
-
-import java.util.Scanner; // Import Scanner class for user input
+import java.util.Scanner;
 
 public class Employee {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in); // Create Scanner object to take input from user
+        Scanner sc = new Scanner(System.in);
 
         // Display available job roles
         System.out.println("1. Manager");
         System.out.println("2. Developer");
         System.out.println("3. Intern");
+
         System.out.print("Choose your job role: ");
+        int job = sc.nextInt();
 
-        int job = sc.nextInt(); // Read the job role selection
-
-        int currentSalary = 0; // Variable to store base salary
+        int currentSalary = 0;
 
         // Assign salary based on job role selection
         switch (job) {
@@ -30,12 +29,12 @@ public class Employee {
                 break;
             default:
                 System.out.println("Invalid selection");
-                return; // Exit program if invalid input
+                return;
         }
 
-        int bonus = 0; // Variable to store bonus percentage
+        int bonus = 0;
 
-        //experience input
+        //Prompt the user to enter experience
         System.out.print("Enter your experience (in years): ");
         int exp = sc.nextInt();
         System.out.println();
@@ -49,7 +48,7 @@ public class Employee {
             bonus = 20; // 20% bonus for more than 5 years of experience
         } else {
             System.out.println("Invalid experience"); // Handle negative experience input
-            return; // Exit program
+            return;
         }
 
         // Calculate final salary after adding the bonus
@@ -60,6 +59,6 @@ public class Employee {
         System.out.printf("Bonus added: %d%%%n", bonus);
         System.out.println("Final Salary: " + finalSalary);
 
-        sc.close(); // Close the Scanner
+        sc.close();
     }
 }
