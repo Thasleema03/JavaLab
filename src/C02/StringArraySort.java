@@ -35,7 +35,6 @@ public class StringArraySort {
             System.out.println(arr[i]);
         }
 
-
         sc.close();
     }
 }
