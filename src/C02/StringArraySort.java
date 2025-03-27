@@ -31,9 +31,10 @@ public class StringArraySort {
 
         // Output: Display sorted strings
         System.out.println("Sorted strings:");
-        for (String str : arr) {
-            System.out.println(str);
+        for (int i = 0; i < arr.length; i++) {
+            System.out.println(arr[i]);
         }
+
 
         sc.close();
     }
