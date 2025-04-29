@@ -13,15 +13,17 @@ class FibonacciGenerator extends Thread {
 
     // Method to generate Fibonacci numbers
     public void run() {
-        int a = 0, b = 1, next;
-        System.out.println("Fibonacci numbers up to " + limit + ":");
-        while (a <= limit) {
-            System.out.print(a + " ");
-            next = a + b;
-            a = b;
-            b = next;
+        synchronized(System.out) {
+            int a = 0, b = 1, next;
+            System.out.println("Fibonacci numbers up to " + limit + ":");
+            while (a <= limit) {
+                System.out.print(a + " ");
+                next = a + b;
+                a = b;
+                b = next;
+            }
+            System.out.println(); // Newline after printing Fibonacci numbers
         }
-        System.out.println(); // Newline after printing Fibonacci numbers
     }
 }
 
@@ -37,13 +39,15 @@ class EvenNumberDisplay extends Thread {
 
     // Method to display even numbers in the given range
     public void run() {
-        System.out.println("Even numbers between " + start + " and " + end + ":");
-        for (int i = start; i <= end; i++) {
-            if (i % 2 == 0) {
-                System.out.print(i + " ");
+        synchronized(System.out) {
+            System.out.println("Even numbers between " + start + " and " + end + ":");
+            for (int i = start; i <= end; i++) {
+                if (i % 2 == 0) {
+                    System.out.print(i + " ");
+                }
             }
+            System.out.println(); // Newline after printing even numbers
         }
-        System.out.println(); // Newline after printing even numbers
     }
 }
 
